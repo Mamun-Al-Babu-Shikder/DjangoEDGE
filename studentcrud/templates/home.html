@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% block title %} Home Page {% endblock %}
+
+{% block content %}
+
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{  message.tags }} alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>{{  message.tags }}!</strong> {{  message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <h2>Students Table</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Department</th>
+            <th>CGPA</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for student in students %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.department }}</td>
+                <td>{{ student.cgpa }}</td>
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        <a href="{% url 'student-details' student.id %}" type="button"
+                           class="btn btn-primary">Details</a>
+
+                        <a href="{% url 'student-update' student.id %}" class="btn btn-warning">Edit</a>
+
+                        <form action="{% url 'delete-student' student.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger"
+                                    onclick="return confirm('Are you sure, want to delete this record?')">
+                                Delete
+                            </button>
+                        </form>
+
+
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'add-student' %}" type="button" class="btn btn-success">Add Student</a>
+{% endblock %}

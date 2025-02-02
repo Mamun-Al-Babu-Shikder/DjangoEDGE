@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>
+      {% block title %} Title Here {% endblock %}
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+</head>
+<body>
+
+<div class="container-fluid p-5 bg-primary text-white text-center">
+  <h1>Our Student CRUD APP</h1>
+  <p>This is simple Student CRUD project using Django</p>
+</div>
+
+<div class="container mt-5">
+
+{% block content %}
+
+{% endblock %}
+
+
+
+
+</div>
+</body>
+</html>

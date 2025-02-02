@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block title %} Student Details {% endblock %}
+{% block content %}
+    <h3>Student Details Info</h3>
+    <table class="table table-bordered">
+        <tr>
+            <td>ID</td>
+            <td>{{ student.id }}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{ student.name }}</td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td>{{ student.age }}</td>
+        </tr>
+        <tr>
+            <td>CGPA</td>
+            <td>{{ student.cgpa }}</td>
+        </tr>
+        <tr>
+            <td>Department</td>
+            <td>{{ student.department }}</td>
+        </tr>
+    </table>
+{% endblock %}

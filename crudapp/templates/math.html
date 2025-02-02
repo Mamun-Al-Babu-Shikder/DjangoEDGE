@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math</title>
+</head>
+<body>
+<form method="post" >
+    {% csrf_token %}
+    <table>
+    <tr>
+        <td>Value1:</td>
+        <td>
+            <input type="number" name="value1">
+        </td>
+    </tr>
+
+    <tr>
+        <td>Value2:</td>
+        <td>
+            <input type="number" name="value2">
+        </td>
+    </tr>
+
+    <tr>
+        <td>Action</td>
+        <td>
+            <select name="action">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="submit">
+        </td>
+    </tr>
+
+</table>
+</form>
+</body>
+</html>
