@@ -34,6 +34,7 @@ source venv/bin/activate
 ### 3. Install Dependencies
 ```bash
 pip install django djangorestframework
+pip install django djangorestframework-simplejwt
 ```
 
 ### 4. Create a Django Project
